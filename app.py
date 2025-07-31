@@ -48,4 +48,7 @@ if uploaded_file:
     st.subheader("📈 Forecasted Closing Prices")
     st.write(forecast_df)
 
-    st.line_chart(forecast_df.set_index('Date'), color= "red")
+    import matplotlib.colors as mcolors
+    print(mcolors.is_color_like('ornge'))
+
+    st.line_chart(forecast_df.set_index('Date'))
