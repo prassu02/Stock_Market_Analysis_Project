@@ -12,7 +12,7 @@ scaler = joblib.load('scaler.pkl')
 st.title("📈 Apple Stock Price Prediction - Next 30 Days")
 st.markdown("Upload your Apple stock CSV file with columns: `Date, Open, High, Low, Close, Volume`")
 
-uploaded_file = st.file_uploader("Upload CSV", type=['csv'])
+uploaded_file = st.file_uploader("cleaned _data.csv", type=['csv'])
 
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
@@ -47,8 +47,5 @@ if uploaded_file:
 
     st.subheader("📈 Forecasted Closing Prices")
     st.write(forecast_df)
-
-    import matplotlib.colors as mcolors
-    print(mcolors.is_color_like('ornge'))
 
     st.line_chart(forecast_df.set_index('Date'))
